@@ -158,10 +158,11 @@ type Config struct {
 
 	Schema cue.Value // used for schema-based decoding
 
-	EscapeHTML bool
-	ProtoPath  []string
-	Format     []format.Option
-	ParseFile  func(name string, src interface{}) (*ast.File, error)
+	EscapeHTML     bool
+	ProtoPath      []string
+	OpenAPIVersion string
+	Format         []format.Option
+	ParseFile      func(name string, src interface{}) (*ast.File, error)
 }
 
 // NewDecoder returns a stream of non-rooted data expressions. The encoding

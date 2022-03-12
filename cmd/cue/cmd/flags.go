@@ -49,10 +49,13 @@ const (
 	flagWithContext flagName = "with-context"
 	flagOut         flagName = "out"
 	flagOutFile     flagName = "outfile"
+	flagOutVersion  flagName = "outversion"
 )
 
 func addOutFlags(f *pflag.FlagSet, allowNonCUE bool) {
 	if allowNonCUE {
+		f.String(string(flagOutVersion), "",
+			`version, Currently only supported for openapi. Default is 3.0.0`)
 		f.String(string(flagOut), "",
 			`output format (run 'cue filetypes' for more info)`)
 	}

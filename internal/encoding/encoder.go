@@ -82,6 +82,7 @@ func NewEncoder(f *build.File, cfg *Config) (*Encoder, error) {
 	case build.OpenAPI:
 		// TODO: get encoding options
 		cfg := &openapi.Config{}
+		cfg.Version = e.cfg.OpenAPIVersion
 		e.interpret = func(v cue.Value) (*ast.File, error) {
 			i := e.instance
 			if i == nil {
